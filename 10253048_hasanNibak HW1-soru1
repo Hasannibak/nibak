@@ -1,0 +1,116 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	char ad[20];
+	int secim,hesapNo;
+	char cevap='e';
+	float bakiye=100,paraEkle,paraCek,paraGonder;//bakiye 100 TL  baslangıc parsı..
+	int sifre = 1234;
+
+	
+	printf("\nKullanici Adi...: ");
+	scanf("%s", &ad);
+	do//Sifre kontroll..
+	{
+		
+		printf("Kullanici Sifre...: ");
+		scanf("%d", &sifre);//sifre icin 1234 girilmelidir.Sifre 1234 girildikten sonra Menu cıkar..
+		printf("\n");
+		if (sifre != 1234)
+		{
+			printf("Yanlis sifre girdiniz...Lutfen sifrenizi kontrol ediniz!..\n");
+		}
+		
+	} while (sifre!=1234);
+	//şifre için--------
+
+	do//Kullanıcınn sistemden cıkıp cıkmadıgını kontrolu icin do while 
+	{
+			printf("\t....MENU....\n");
+			printf("\n");
+			printf("Secenekler : \n");
+			printf("----------\n");
+			printf("\n1-Para Miktari...\n2-Para Ekleme... \n3-Para Cekme...\n4-Para Gonderme... \n");
+			printf("\nLutfen, yapmak istediginiz islemi seciniz....: ");
+			scanf("%d", &secim);
+			printf("\n");
+
+			if (secim == 1)//bakiye
+			{
+
+				printf("\tPara Miktari....: %5.2f TL\n", bakiye);
+				
+			}
+			else if (secim == 2)//Para ekleme
+			{
+				printf("Eklemek istediginiz para miktarini giriniz...: ");
+				scanf("%f", &paraEkle);
+				bakiye += paraEkle;
+				printf("\tParaniz Basariyla Hesabiniza Eklendi...\n");
+				printf("\t\tPara Miktari....: %5.2f TL\n", bakiye);
+				
+			}
+			else if (secim == 3)//Para cekme
+			{
+				printf("\tCekmek istediginiz para miktarini giriniz...: ");
+				scanf("%f", &paraCek);
+				if (paraCek > bakiye)//bakiye kontrolu
+				{
+					printf("\t\tBakiye  Yetersiz...\n ");
+				}
+				else
+				{
+					bakiye -= paraCek;
+					printf(" \t\tKalan Para Miktari....: %5.2f TL\n", bakiye);
+				}
+
+				
+			}
+			else if (secim == 4)//Baska hesaba Para gönderme
+			{
+				printf("Para gondermek istediginiz hesabi giriniz...: ");
+				scanf("%d", &hesapNo);
+				printf("\tGondermek istediginiz para miktarini giriniz...: ");
+				scanf("%f", &paraGonder);
+				if (paraGonder > bakiye)//bakiye kontrolu
+				{
+					printf("\t\tBakiye  Yetersiz...\n ");
+				}
+				else
+				{
+					bakiye -= paraGonder;
+					printf("\t\tParaniz Basariyla  Gonderildi....\n");
+					printf(" \t\t\tKalan Para Miktari....: %5.2f TL\n", bakiye);
+				}
+				
+			}
+			else
+			{
+				printf("\tSeceneklerde bulunan 1,2,3 veya 4  ten birini seciniz...\n");
+			
+			}
+
+
+
+			printf("\nDevam etmek istiyor musunuz?(Devam icin -e)...: ");
+			cevap = getche();
+			printf("\n");
+	} while (cevap == 'e' || cevap == 'E');
+		
+  
+  
+       
+		 
+ 
+    
+	
+
+}	
+	
+      
+
+	
+	
+
