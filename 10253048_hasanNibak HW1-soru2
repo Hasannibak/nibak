@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int sayi;
+	printf("Dort haneli bir sayi giriniz...: ");
+	scanf("%d",&sayi);
+	printf("\n");
+	printf("Girdiginiz  Sayi....:%d\n ",sayi);
+	printf("\n");
+	printf(" %d tane birlik sayi\n ",sayi%10);
+	printf("\n");
+	printf(" %d tane onluk  sayi\n",sayi%100/10);
+	printf("\n");
+	printf(" %d tane yuzluk sayi\n",sayi%1000/100);
+	printf("\n");
+	printf(" %d tane binlik sayi\n",sayi%10000/1000);
+	printf("\n");
+	printf(" %d tane onbinlik sayi\n",sayi%100000/10000);
+	printf("\n");
+	getch();
+	
+}
